@@ -16,8 +16,23 @@
 
 ### Input Form
 
--[ ] Input Employee Data -[ ] First Name -[ ] Last Name -[ ] ID -[ ] Title -[ ] Annual Salary -[ ] Submit Button
+- [ ] Input Employee Data
+  - [ ] First Name
+  - [ ] Last Name
+  - [ ] ID
+  - [ ] Title
+  - [ ] Annual Salary
+- [ ] Submit Button
 
 ### Output to Table
 
--[ ] Display Table -[ ] Table has Header with pertinent information -[ ] First Name -[ ] Last Name -[ ] ID -[ ] Title -[ ] Annual Salary -[ ] Additional column for delete button -[ ] Display each employee after input
+- [ ] Display Table
+- [ ] Table has Header with pertinent information
+  - [ ] First Name
+  - [ ] Last Name
+  - [ ] ID
+  - [ ] Title
+  - [ ] Annual Salary
+  - [ ] Additional column for delete button
+- [ ] Display each employee after input
+  - [ ] Delete button appears next to each employee in column
