@@ -16,13 +16,15 @@
 
 ### Input Form
 
-- [ ] Input Employee Data
-  - [ ] First Name
-  - [ ] Last Name
-  - [ ] ID
-  - [ ] Title
-  - [ ] Annual Salary
+- [x] Input Employee Data
+  - [x] First Name
+  - [x] Last Name
+  - [x] ID
+  - [x] Title
+  - [x] Annual Salary
 - [ ] Submit Button
+  - [ ] Takes in the data for storage
+  - [ ] Clear input fields on click
 
 ### Output to Table
 
