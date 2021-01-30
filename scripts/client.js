@@ -22,10 +22,13 @@ function addEmployeeData(event) {
   };
   console.log('employee added', employee);
   // push object to the array
+  employeeData.push(employee);
   // clear form
 }
 
 function readyOn() {
   console.log('readyOn');
-  $(document).on('submit', addEmployeeData);
+  // On Add Item submit
+  // will save inventory object to array
+  $(document).on('click', '#submit-employee-info-button', addEmployeeData);
 }
