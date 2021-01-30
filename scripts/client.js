@@ -29,6 +29,7 @@ function addEmployeeData(event) {
   $('#employee-id-input').val('');
   $('#employee-title-input').val('');
   $('#annual-salary-input').val('');
+  // Update DOM to have input data.
 }
 
 function readyOn() {

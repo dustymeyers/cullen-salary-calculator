@@ -24,11 +24,17 @@
   - [x] Annual Salary
 - [x] Submit Button
   - [x] Takes in the data for storage
-  - [ ] Clear input fields on click
+  - [x] Clear input fields on click
 
 ### Output to Table
 
 - [ ] Display Table
+  - [x] Build out HTML Framework
+    - [x] First Name Header
+    - [x] Last Name header
+    - [x] ID header
+    - [x] Title header
+    - [x] Annual Salary header
 - [ ] Table has Header with pertinent information
   - [ ] First Name
   - [ ] Last Name
@@ -38,3 +44,4 @@
   - [ ] Additional column for delete button
 - [ ] Display each employee after input
   - [ ] Delete button appears next to each employee in column
+- [ ] Display Total Monthly Cost
