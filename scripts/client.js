@@ -34,11 +34,30 @@ function addEmployeeData(event) {
   renderEmployeeData(employeeData);
 }
 
+function deleteEmployeeData(event) {
+  console.log('deleteEmployeeData', this.value);
+  event.preventDefault();
+  // grab a unique value from the table
+  let employee = this.value;
+  // target the employee that was clicked
+  for (let i = 0; i < employeeData.length; i++) {
+    // compare with data in the array
+    if (employee === employeeData[i].employeeID) {
+      // remove from array
+      employeeData.splice(i, 1);
+    }
+  }
+  // render data;
+  renderEmployeeData(employeeData);
+}
+
 function readyOn() {
   console.log('readyOn');
   // On Add Item submit
   // will save inventory object to array
   $(document).on('click', '#submit-employee-info-button', addEmployeeData);
+  // On delete button clicked
+  $(document).on('click', '.delete-button', deleteEmployeeData);
 }
 
 function renderEmployeeData(dataArray) {
@@ -51,8 +70,25 @@ function renderEmployeeData(dataArray) {
         <td>${employee.employeeID}</td>
         <td>${employee.title}</td>
         <td>${employee.annualSalary}</td>
-        <td><button class="delete button">Delete</button></td>
+        // use a class for button since there is more than one.
+        <td>
+          <button class="delete-button" value="${employee.employeeID}">Delete</button>
+        </td>
       </tr>
     `);
   }
+  // Calculate Monthly COST
+  calculateMonthlyCost();
+  //
+}
+
+function calculateMonthlyCost() {
+  // set a value for adding the annual salaries
+  let totalAnnualSalaries = 0;
+  // loop through the array elements
+  for (let i = 0; i < employeeData.length; i++) {
+    totalAnnualSalaries += employeeData[i].annualSalary;
+  }
+  console.log('cost added up', totalAnnualSalaries);
+  //
 }

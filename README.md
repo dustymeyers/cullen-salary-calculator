@@ -36,6 +36,10 @@
   - [x] Title
   - [x] Annual Salary
   - [x] Additional column for delete button
-- [ ] Display each employee after input
-  - [ ] Delete button appears next to each employee in column
+- [x] Display each employee after input
+  - [x] Delete button appears next to each employee in column
+  - [x] Delete button works
 - [ ] Display Total Monthly Cost
+  - [ ] Take in all the annual salaries and add them up
+  - [ ] Divide them by 12 (monthly)
+  - [ ] Update DOM to s
