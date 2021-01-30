@@ -29,19 +29,13 @@
 ### Output to Table
 
 - [ ] Display Table
-  - [x] Build out HTML Framework
-    - [x] First Name Header
-    - [x] Last Name header
-    - [x] ID header
-    - [x] Title header
-    - [x] Annual Salary header
-- [ ] Table has Header with pertinent information
-  - [ ] First Name
-  - [ ] Last Name
-  - [ ] ID
-  - [ ] Title
-  - [ ] Annual Salary
-  - [ ] Additional column for delete button
+- [x] Table has Header with pertinent information
+  - [x] First Name
+  - [x] Last Name
+  - [x] ID
+  - [x] Title
+  - [x] Annual Salary
+  - [x] Additional column for delete button
 - [ ] Display each employee after input
   - [ ] Delete button appears next to each employee in column
 - [ ] Display Total Monthly Cost
