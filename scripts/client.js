@@ -24,6 +24,7 @@ function addEmployeeData(event) {
   // push object to the array
   employeeData.push(employee);
   // clear form
+  $('#first-name-input').val('');
 }
 
 function readyOn() {

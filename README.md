@@ -22,8 +22,8 @@
   - [x] ID
   - [x] Title
   - [x] Annual Salary
-- [ ] Submit Button
-  - [ ] Takes in the data for storage
+- [x] Submit Button
+  - [x] Takes in the data for storage
   - [ ] Clear input fields on click
 
 ### Output to Table
