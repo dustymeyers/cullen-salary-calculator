@@ -25,6 +25,10 @@ function addEmployeeData(event) {
   employeeData.push(employee);
   // clear form
   $('#first-name-input').val('');
+  $('#last-name-input').val('');
+  $('#employee-id-input').val('');
+  $('#employee-title-input').val('');
+  $('#annual-salary-input').val('');
 }
 
 function readyOn() {
