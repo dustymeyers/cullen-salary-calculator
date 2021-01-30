@@ -30,6 +30,8 @@ function addEmployeeData(event) {
   $('#employee-title-input').val('');
   $('#annual-salary-input').val('');
   // Update DOM to have input data.
+  // add a row to the table
+  renderEmployeeData(employeeData);
 }
 
 function readyOn() {
@@ -37,4 +39,20 @@ function readyOn() {
   // On Add Item submit
   // will save inventory object to array
   $(document).on('click', '#submit-employee-info-button', addEmployeeData);
+}
+
+function renderEmployeeData(dataArray) {
+  $('#employee-data-output').empty();
+  for (let employee of dataArray) {
+    $('#employee-data-output').append(`
+      <tr>
+        <td>${employee.firstName}</td>
+        <td>${employee.lastName}</td>
+        <td>${employee.employeeID}</td>
+        <td>${employee.title}</td>
+        <td>${employee.annualSalary}</td>
+        <td><button class="delete button">Delete</button></td>
+      </tr>
+    `);
+  }
 }
