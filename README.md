@@ -4,13 +4,15 @@
 
 ## Description
 
-- An app that has an input form for employees.
-  - Takes in first name, last name, ID number, job title, annual salary.
-  - Submit button stores the data
-- The app uses the stored information to calculate monthly costs, which it displays on the DOM
-  - If monthly cost exceeds $20,000 The total monthly cost receives a red background.
-- Delete button for removing employees from the DOM.
-  - Base mode does not need to remove that employee's salary from the reported total
+Duration: Weekend Sprint
+
+This app allows one to input data about one's employees. This includes the employee's first name, last name, employee ID number, job title, and annual salary. That information is then stored in an array and displayed on the webpage in the form of a table. As one inputs each employee's information, the app automatically calculates what that would evaluate to in monthly cost. It then renders that on the display. If the total monthly cost of all of the employees exceeds $20,000, the total monthly cost will highlight in red as a warning. Each row generated, also generates a delete button at the end of the row. One can use that to remove that employee's information from the display, which in turn will recalculate and render the total monthly cost. There is a restore button located next to the monthly cost that will render the table with all of the stored employee data after one has deleted any number of rows.
+
+## Screen Shot
+
+![Salary Calculator with No Warning](salary-calculator-no-warning.png)
+
+![Salary Calculator with Warning](salary-calculator-warning.png)
 
 ## TODO
 
@@ -47,6 +49,6 @@
 
   ### Stretch Goals
 
-  - [] Styles
-  - [] Restore button
-  - [] Calculate
+  - [x] Styles
+  - [x] Restore button
+  - [x] Calculate Monthly Cost when deleted
