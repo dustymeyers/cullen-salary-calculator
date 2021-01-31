@@ -1,13 +1,32 @@
 :root {
   font-size: 1.5em;
 }
-body {
+body,
+thead {
   background-color: #14213d;
-}
-h1 {
-  background-color: #e5e5e5;
 }
 
 h2 {
   background-color: #fca311;
+}
+th {
+  min-width: 150px;
+}
+
+thead {
+  color: white;
+}
+table {
+  margin: auto;
+  width: 75%;
+}
+table,
+td {
+  background-color: white;
+  border-collapse: collapse;
+  border: 1px solid #000000;
+}
+
+#app-wrapper {
+  background-color: #e5e5e5;
 }
