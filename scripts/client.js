@@ -85,10 +85,19 @@ function renderEmployeeData(dataArray) {
 function calculateMonthlyCost() {
   // set a value for adding the annual salaries
   let totalAnnualSalaries = 0;
+  // set a value for the element we will manipulate
+  let el = $('#monthly-cost');
   // loop through the array elements
   for (let i = 0; i < employeeData.length; i++) {
     totalAnnualSalaries += employeeData[i].annualSalary;
   }
   console.log('cost added up', totalAnnualSalaries);
-  //
+  // convert total annual salaries to total monthly salary
+  let totalMonthlySalaries = totalAnnualSalaries / 12; // 12 is from number of months in a year
+  console.log(totalMonthlySalaries);
+  // change the DOM
+  // clear out the space
+  el.empty();
+  // update it with new number
+  el.append(totalMonthlySalaries);
 }
