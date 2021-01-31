@@ -111,9 +111,9 @@ function calculateMonthlyCost() {
   // clear out the space
   el.empty();
   // update it with new number
-  el.append(totalMonthlySalaries);
+  el.append(`$${totalMonthlySalaries}`);
   // Check if the total monthly sales are higher than 20000
   if (totalMonthlySalaries > 20000) {
-    $('#monthly-cost-output').css('background-color', ' red').append();
+    $('#monthly-cost-value').css('background-color', 'red').append();
   }
 }
