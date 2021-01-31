@@ -2,22 +2,12 @@ console.log('Hello World');
 $(document).ready(readyOn);
 
 const employeeData = [];
+const deletedData = [];
 
 function addEmployeeData(event) {
   event.preventDefault();
   console.log('addEmployeeData');
-  // check if inputs are empty
-  // if (
-  //   $('#first-name-input').val() === '' ||
-  //   $('#last-name-input').val() === '' ||
-  //   $('#employee-id-input').val() === '' ||
-  //   $('#employee-title-input').val() === '' ||
-  //   $('#annual-salary-input').val() === ''
-  // ) {
-  //   // if empty output emptyInputField message
-  //   console.log('empty!');
-  //   // TODO - display an alert
-  // } else {
+
   // grab input data from the DOM
   let firstName = $('#first-name-input').val();
   let lastName = $('#last-name-input').val();
@@ -44,16 +34,18 @@ function addEmployeeData(event) {
   // Update DOM to have input data.
   // add a row to the table
   renderEmployeeData(employeeData);
-  // }
 }
 
 function deleteEmployeeData(event) {
   event.preventDefault();
   // remove the row from the dom
   $(this).closest('tr').empty();
+  // TODO - get info from the deleted field
+  // may need to use .text() or .data()
+  // push into a deleted array?
 }
 
-// TODO - change this function to only remove from the dom
+// below function made to remove data completely from the array
 // function deleteEmployeeData(event) {
 //   console.log('deleteEmployeeData', this.value);
 //   event.preventDefault();
@@ -114,7 +106,7 @@ function calculateMonthlyCost() {
   console.log('cost added up', totalAnnualSalaries);
   // convert total annual salaries to total monthly salary
   let totalMonthlySalaries = Number((totalAnnualSalaries / 12).toFixed(2)); // 12 is from number of months in a year
-  console.log(totalMonthlySalaries);
+  console.log(`Total month salary now is:`, totalMonthlySalaries);
   // change the DOM
   // clear out the space
   el.empty();

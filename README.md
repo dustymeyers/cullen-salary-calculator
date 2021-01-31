@@ -28,7 +28,7 @@
 
 ### Output to Table
 
-- [ ] Display Table
+- [x] Display Table
 - [x] Table has Header with pertinent information
   - [x] First Name
   - [x] Last Name
@@ -39,7 +39,14 @@
 - [x] Display each employee after input
   - [x] Delete button appears next to each employee in column
   - [x] Delete button works
-- [ ] Display Total Monthly Cost
-  - [ ] Take in all the annual salaries and add them up
-  - [ ] Divide them by 12 (monthly)
-  - [ ] Update DOM to s
+- [x] Display Total Monthly Cost
+
+  - [x] Take in all the annual salaries and add them up
+  - [x] Divide them by 12 (monthly)
+  - [x] Update DOM to
+
+  ### Stretch Goals
+
+  - [] Styles
+  - [] Restore button
+  - [] Calculate

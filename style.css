@@ -1,14 +1,20 @@
 :root {
   font-size: 1.5em;
 }
+
 body,
 thead {
   background-color: #14213d;
 }
 
+h1 {
+  text-align: center;
+}
+
 h2 {
   background-color: #fca311;
 }
+
 th {
   min-width: 150px;
 }
@@ -16,10 +22,12 @@ th {
 thead {
   color: white;
 }
+
 table {
   margin: auto;
   width: 75%;
 }
+
 table,
 td {
   background-color: white;
@@ -27,6 +35,40 @@ td {
   border: 1px solid #000000;
 }
 
+/* Classes */
+
+.input-field {
+}
+
+/* IDs */
+
 #app-wrapper {
   background-color: #e5e5e5;
+  margin: auto;
+  width: 90%;
+}
+
+#first-name-input {
+}
+#last-name-input {
+}
+
+#employee-id-input {
+}
+
+#employee-title-input {
+}
+
+#annual-salary-input {
+}
+
+#submit-employee-info-button {
+}
+
+#input-form {
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  grid-template-rows: auto;
+  width: 75%;
+  margin: auto;
 }
