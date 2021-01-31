@@ -7,44 +7,44 @@ function addEmployeeData(event) {
   event.preventDefault();
   console.log('addEmployeeData');
   // check if inputs are empty
-  if (
-    $('#first-name-input').val() === '' ||
-    $('#last-name-input').val() === '' ||
-    $('#employee-id-input').val() === '' ||
-    $('#employee-title-input').val() === '' ||
-    $('#annual-salary-input').val() === ''
-  ) {
-    // if empty output emptyInputField message
-    console.log('empty!');
-    // TODO - display an alert
-  } else {
-    // grab input data from the DOM
-    let firstName = $('#first-name-input').val();
-    let lastName = $('#last-name-input').val();
-    let employeeID = $('#employee-id-input').val();
-    let title = $('#employee-title-input').val();
-    let annualSalary = $('#annual-salary-input').val();
-    // create an object literal to store the data in
-    const employee = {
-      firstName: firstName,
-      lastName: lastName,
-      employeeID: employeeID,
-      title: title,
-      annualSalary: Number(annualSalary),
-    };
-    console.log('employee added', employee);
-    // push object to the array
-    employeeData.push(employee);
-    // clear form
-    $('#first-name-input').val('');
-    $('#last-name-input').val('');
-    $('#employee-id-input').val('');
-    $('#employee-title-input').val('');
-    $('#annual-salary-input').val('');
-    // Update DOM to have input data.
-    // add a row to the table
-    renderEmployeeData(employeeData);
-  }
+  // if (
+  //   $('#first-name-input').val() === '' ||
+  //   $('#last-name-input').val() === '' ||
+  //   $('#employee-id-input').val() === '' ||
+  //   $('#employee-title-input').val() === '' ||
+  //   $('#annual-salary-input').val() === ''
+  // ) {
+  //   // if empty output emptyInputField message
+  //   console.log('empty!');
+  //   // TODO - display an alert
+  // } else {
+  // grab input data from the DOM
+  let firstName = $('#first-name-input').val();
+  let lastName = $('#last-name-input').val();
+  let employeeID = $('#employee-id-input').val();
+  let title = $('#employee-title-input').val();
+  let annualSalary = $('#annual-salary-input').val();
+  // create an object literal to store the data in
+  const employee = {
+    firstName: firstName,
+    lastName: lastName,
+    employeeID: employeeID,
+    title: title,
+    annualSalary: Number(annualSalary),
+  };
+  console.log('employee added', employee);
+  // push object to the array
+  employeeData.push(employee);
+  // clear form
+  $('#first-name-input').val('');
+  $('#last-name-input').val('');
+  $('#employee-id-input').val('');
+  $('#employee-title-input').val('');
+  $('#annual-salary-input').val('');
+  // Update DOM to have input data.
+  // add a row to the table
+  renderEmployeeData(employeeData);
+  // }
 }
 
 function deleteEmployeeData(event) {
@@ -75,7 +75,7 @@ function readyOn() {
   console.log('readyOn');
   // On Add Item submit
   // will save inventory object to array
-  $(document).on('click', '#submit-employee-info-button', addEmployeeData);
+  $('#input-form').submit('#submit-employee-info-button', addEmployeeData);
   // On delete button clicked
   $(document).on('click', '.delete-button', deleteEmployeeData);
 }
