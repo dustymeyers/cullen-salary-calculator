@@ -35,21 +35,28 @@ function addEmployeeData(event) {
 }
 
 function deleteEmployeeData(event) {
-  console.log('deleteEmployeeData', this.value);
   event.preventDefault();
-  // grab a unique value from the table
-  let employee = this.value;
-  // target the employee that was clicked
-  for (let i = 0; i < employeeData.length; i++) {
-    // compare with data in the array
-    if (employee === employeeData[i].employeeID) {
-      // remove from array
-      employeeData.splice(i, 1);
-    }
-  }
-  // render data;
-  renderEmployeeData(employeeData);
+  // remove the row from the dom
+  $(this).closest('tr').empty();
 }
+
+// TODO - change this function to only remove from the dom
+// function deleteEmployeeData(event) {
+//   console.log('deleteEmployeeData', this.value);
+//   event.preventDefault();
+//   // grab a unique value from the table
+//   let employee = this.value;
+//   // target the employee that was clicked
+//   for (let i = 0; i < employeeData.length; i++) {
+//     // compare with data in the array
+//     if (employee === employeeData[i].employeeID) {
+//       // remove from array
+//       employeeData.splice(i, 1);
+//     }
+//   }
+//   // render data;
+//   renderEmployeeData(employeeData);
+// }
 
 function readyOn() {
   console.log('readyOn');
@@ -93,7 +100,7 @@ function calculateMonthlyCost() {
   }
   console.log('cost added up', totalAnnualSalaries);
   // convert total annual salaries to total monthly salary
-  let totalMonthlySalaries = totalAnnualSalaries / 12; // 12 is from number of months in a year
+  let totalMonthlySalaries = Math.round(totalAnnualSalaries / 12); // 12 is from number of months in a year
   console.log(totalMonthlySalaries);
   // change the DOM
   // clear out the space
