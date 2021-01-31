@@ -6,32 +6,45 @@ const employeeData = [];
 function addEmployeeData(event) {
   event.preventDefault();
   console.log('addEmployeeData');
-  // grab input data from the DOM
-  let firstName = $('#first-name-input').val();
-  let lastName = $('#last-name-input').val();
-  let employeeID = $('#employee-id-input').val();
-  let title = $('#employee-title-input').val();
-  let annualSalary = $('#annual-salary-input').val();
-  // create an object literal to store the data in
-  const employee = {
-    firstName: firstName,
-    lastName: lastName,
-    employeeID: employeeID,
-    title: title,
-    annualSalary: Number(annualSalary),
-  };
-  console.log('employee added', employee);
-  // push object to the array
-  employeeData.push(employee);
-  // clear form
-  $('#first-name-input').val('');
-  $('#last-name-input').val('');
-  $('#employee-id-input').val('');
-  $('#employee-title-input').val('');
-  $('#annual-salary-input').val('');
-  // Update DOM to have input data.
-  // add a row to the table
-  renderEmployeeData(employeeData);
+  // check if inputs are empty
+  if (
+    $('#first-name-input').val() === '' ||
+    $('#last-name-input').val() === '' ||
+    $('#employee-id-input').val() === '' ||
+    $('#employee-title-input').val() === '' ||
+    $('#annual-salary-input').val() === ''
+  ) {
+    // if empty output emptyInputField message
+    console.log('empty!');
+    // TODO - display an alert
+  } else {
+    // grab input data from the DOM
+    let firstName = $('#first-name-input').val();
+    let lastName = $('#last-name-input').val();
+    let employeeID = $('#employee-id-input').val();
+    let title = $('#employee-title-input').val();
+    let annualSalary = $('#annual-salary-input').val();
+    // create an object literal to store the data in
+    const employee = {
+      firstName: firstName,
+      lastName: lastName,
+      employeeID: employeeID,
+      title: title,
+      annualSalary: Number(annualSalary),
+    };
+    console.log('employee added', employee);
+    // push object to the array
+    employeeData.push(employee);
+    // clear form
+    $('#first-name-input').val('');
+    $('#last-name-input').val('');
+    $('#employee-id-input').val('');
+    $('#employee-title-input').val('');
+    $('#annual-salary-input').val('');
+    // Update DOM to have input data.
+    // add a row to the table
+    renderEmployeeData(employeeData);
+  }
 }
 
 function deleteEmployeeData(event) {
@@ -102,6 +115,7 @@ function calculateMonthlyCost() {
   // convert total annual salaries to total monthly salary
   let totalMonthlySalaries = Math.round(totalAnnualSalaries / 12); // 12 is from number of months in a year
   console.log(totalMonthlySalaries);
+  // Check if the total monthly sales are higher than 20000
   // change the DOM
   // clear out the space
   el.empty();
