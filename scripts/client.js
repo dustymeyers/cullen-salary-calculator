@@ -2,7 +2,6 @@ console.log('Hello World');
 $(document).ready(readyOn);
 
 const employeeData = [];
-const deletedData = [];
 
 function addEmployeeData(event) {
   event.preventDefault();
@@ -33,16 +32,29 @@ function addEmployeeData(event) {
   $('#annual-salary-input').val('');
   // Update DOM to have input data.
   // add a row to the table
-  renderEmployeeData(employeeData);
+  renderEmployeeData();
 }
 
 function deleteEmployeeData(event) {
   event.preventDefault();
+  // may need to use .text() or .data()
+  let el = $('#monthly-cost-value');
+  let annualCost = Number($(this).parent().siblings('.annual-salary').text());
+  // console.log(annualCost);
+  // divide into months
+  let employeeMonthlyCost = Number(annualCost / 12);
+  // console.log(employeeMonthlyCost);
+  // get current total monthly from DOM
+  let totalMonthlyCost = Number(el.text());
+  console.log(totalMonthlyCost);
+  // subtract employeeMonthlyCost from totalMonthlyCost
+  let updatedMonthlyCost = totalMonthlyCost - employeeMonthlyCost;
+  // console.log(updatedMonthlyCost);
+  el.empty();
+  el.append(updatedMonthlyCost.toFixed(2));
   // remove the row from the dom
   $(this).closest('tr').empty();
-  // TODO - get info from the deleted field
-  // may need to use .text() or .data()
-  // push into a deleted array?
+  costWarning(updatedMonthlyCost);
 }
 
 // below function made to remove data completely from the array
@@ -63,6 +75,14 @@ function deleteEmployeeData(event) {
 //   renderEmployeeData(employeeData);
 // }
 
+function costWarning(total) {
+  if (total > 20000) {
+    return $('#monthly-cost-value').css('background-color', 'red').append();
+  } else {
+    return $('#monthly-cost-value').css('background-color', '#e5e5e5').append();
+  }
+}
+
 function readyOn() {
   console.log('readyOn');
   // On Add Item submit
@@ -70,21 +90,23 @@ function readyOn() {
   $('#input-form').submit('#submit-employee-info-button', addEmployeeData);
   // On delete button clicked
   $(document).on('click', '.delete-button', deleteEmployeeData);
+  // on click, re-render the table
+  $(document).on('click', '#restore-table-button', renderEmployeeData);
 }
 
-function renderEmployeeData(dataArray) {
+function renderEmployeeData() {
   $('#employee-data-output').empty();
-  for (let employee of dataArray) {
+  for (let employee of employeeData) {
     $('#employee-data-output').append(`
       <tr>
         <td>${employee.firstName}</td>
         <td>${employee.lastName}</td>
         <td>${employee.employeeID}</td>
         <td>${employee.title}</td>
-        <td>${employee.annualSalary}</td>
+        <td class="annual-salary">${employee.annualSalary}</td>
         // use a class for button since there is more than one.
         <td>
-          <button class="delete-button" value="${employee.employeeID}">Delete</button>
+          <button class="delete-button">Delete</button>
         </td>
       </tr>
     `);
@@ -111,9 +133,7 @@ function calculateMonthlyCost() {
   // clear out the space
   el.empty();
   // update it with new number
-  el.append(`$${totalMonthlySalaries}`);
+  el.append(totalMonthlySalaries);
   // Check if the total monthly sales are higher than 20000
-  if (totalMonthlySalaries > 20000) {
-    $('#monthly-cost-value').css('background-color', 'red').append();
-  }
+  costWarning(totalMonthlySalaries);
 }
