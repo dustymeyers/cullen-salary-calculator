@@ -77,9 +77,9 @@ function deleteEmployeeData(event) {
 
 function costWarning(total) {
   if (total > 20000) {
-    return $('#monthly-cost-value').css('background-color', 'red').append();
+    return $('.warning').css('background-color', 'red').append();
   } else {
-    return $('#monthly-cost-value').css('background-color', '#e5e5e5').append();
+    return $('.warning').css('background-color', '#e5e5e5').append();
   }
 }
 
