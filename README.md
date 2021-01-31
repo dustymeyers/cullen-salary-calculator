@@ -14,6 +14,26 @@ This app allows one to input data about one's employees. This includes the emplo
 
 ![Salary Calculator with Warning](salary-calculator-warning.png)
 
+## Usage
+
+1. The client wants to see what employee or accumulation of employees forces their monthly budget to exceed $20,000.
+2. They input each of their employees' data into the form, one-by-one.
+3. As each employee is submitted to the form, that same data is then rendered in the table below the form.
+4. Each employee will be rendered in a row that has a "Delete" button at the end.
+5. The monthly cost is displayed below the table.
+6. If the monthly cost is larger than 20,000 the background color of the total will change to red.
+7. The client can remove employees from the table with the "Delete" button in its respective row.
+8. When an employee is removed, the total monthly cost is adjust below the table.
+9. If the client wants to show all of the employees again after they have been removed from the table, the client can use the restore button to restore it to a full table.
+
+## Built With
+
+This project is built with HTML, CSS, Javascript and jQuery.
+
+## Acknowledgement
+
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality.
+
 ## TODO
 
 ### Input Form
