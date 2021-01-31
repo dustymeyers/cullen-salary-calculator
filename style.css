@@ -7,16 +7,20 @@ thead {
 }
 
 h1 {
+  padding: 0.5em;
   text-align: center;
+  margin-bottom: 0;
 }
 
 h2 {
   background-color: #fca311;
   padding: 0.25em;
+  margin: 0;
+  border-radius: 10px 45px 0 0;
 }
 
 th {
-  min-width: 150px;
+  width: 5%;
 }
 
 thead {
@@ -44,14 +48,13 @@ td {
   width: 90%;
 }
 
-#form-wrapper {
-  margin: auto;
-  width: 75%;
-}
-
+#form-wrapper,
 #table-wrapper {
+  padding-top: 0;
   margin: auto;
   width: 75%;
+  border: 2px solid #fca311;
+  border-radius: 15px 50px;
 }
 
 #first-name-input {
@@ -89,4 +92,5 @@ td {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 1.5em 1.5em;
+  padding: 1em;
 }
